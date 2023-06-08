@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Add Movie</h2>
+<mat-dialog-content>
+    <form #movieForm="ngForm" (ngSubmit)="addMovie(movieForm)">
+        <p>
+            <mat-form-field>
+                <mat-label>Movie Name</mat-label>
+                <input type="text" matInput name="movieName" ngModel>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <mat-label>Theatre Name</mat-label>
+                <input type="text" matInput name="theatreName" ngModel>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <mat-label>Tickets Available</mat-label>
+                <input type="number" matInput name="ticketsAvailable" ngModel>
+            </mat-form-field>
+        </p>
+        <p>
+            <button type="submit" mat-raised-button color="primary">Register</button>
+        </p>
+    </form>
+</mat-dialog-content>

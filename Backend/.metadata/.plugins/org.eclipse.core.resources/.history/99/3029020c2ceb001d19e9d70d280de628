@@ -1,0 +1,37 @@
+package com.movie.management.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.movie.management.model.MovieDetails;
+import com.movie.management.service.MovieServices;
+import com.movie.management.service.TicketServices;
+
+@RestController
+@RequestMapping("/api/v1")
+public class TicketController {
+	
+	@Autowired
+	MovieServices movieServices;
+	
+	@Autowired
+	TicketServices ticketServices;
+	
+	public ResponseEntity<?> bookMovie(@RequestBody MovieDetails movieDetails){
+		boolean isTicketsAvailable=movieServices.isTicketAvailable(movieDetails.getMovieId(), movieDetails.getNoOfSeats());
+		
+		if(isTicketsAvailable) {
+			movieServices.updateAvailableTicket(movieDetails.getMovieId(), movieDetails.getNoOfSeats());
+			ticketServices.bookTickets(movieDetails.getMovieId(), movieDetails.getMovieName(), movieDetails.getTheatreName(), movieDetails.getNoOfSeats());
+			return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+		}
+		else {
+			return new ResponseEntity<String>("Entered number of seats exceeeds the available seats", HttpStatus.CONFLICT);
+		}
+	}
+	
+}

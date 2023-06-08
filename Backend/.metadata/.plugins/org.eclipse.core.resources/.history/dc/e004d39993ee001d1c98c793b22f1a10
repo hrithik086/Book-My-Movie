@@ -1,0 +1,45 @@
+package com.user.management.service;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.user.management.model.User;
+import com.user.management.repository.UserRepo;
+
+
+@SpringBootTest
+public class UserServiceImplTest {
+	
+	@Autowired
+	private UserService userService;
+	
+	@MockBean
+	private UserRepo userRepo;
+	
+	private List<User> userList;
+	
+	@BeforeEach
+	public void setup() {
+		userList=new ArrayList<User>();
+		when(userRepo.findAll()).thenReturn(userList);
+		
+	}
+	
+	@Test
+	public void getAllUserTest() {
+		List<User> returnedList=userService.getAllUsers();
+		assertEquals(userList, returnedList);
+	}
+	
+}

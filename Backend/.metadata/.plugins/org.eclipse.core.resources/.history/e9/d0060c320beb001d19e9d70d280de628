@@ -1,0 +1,5 @@
+package com.movie.management.model;
+
+public class MovieDetails {
+
+}

@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>Update Movie</h2>
+<mat-dialog-content>
+    <form #updateMovieForm="ngForm" (ngSubmit)="updateMovie(updateMovieForm)">
+        <p>
+            <mat-form-field>
+                <mat-label>ID</mat-label>
+                <input type="number" matInput name="id" [ngModel]="id" [disabled]="isDisable">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <mat-label>Movie Name</mat-label>
+                <input type="text" matInput name="movieName" [ngModel]="movieName">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <mat-label>Theatre Name</mat-label>
+                <input type="text" matInput name="theatreName" [ngModel]="theatreName" >
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <mat-label>Tickets Available</mat-label>
+                <input type="number" matInput name="ticketsAvailable" [ngModel]="ticketsAvailable">
+            </mat-form-field>
+        </p>
+        <p>
+            <button type="submit" mat-raised-button color="primary">Update</button>
+        </p>
+    </form>
+</mat-dialog-content>

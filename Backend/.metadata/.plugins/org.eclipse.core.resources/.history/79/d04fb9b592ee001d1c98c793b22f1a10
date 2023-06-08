@@ -1,0 +1,14 @@
+package com.user.management.service;
+
+import static org.mockito.Mockito.mock;
+
+import org.junit.Before;
+
+import com.user.management.repository.UserRepo;
+
+
+public class UserServiceImplTest {
+	
+	
+	
+}

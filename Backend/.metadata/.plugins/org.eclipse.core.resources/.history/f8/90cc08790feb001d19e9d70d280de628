@@ -1,0 +1,5 @@
+package com.movie.management.repo;
+
+public interface TicketRepository {
+
+}

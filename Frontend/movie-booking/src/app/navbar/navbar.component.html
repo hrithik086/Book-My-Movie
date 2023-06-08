@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+    <span>Book My Movie</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    
+
+    <button mat-flat-button color="primary" class="myButton" *ngIf="isLoggedIn" (click)="getAllMovies()">Get All Movies</button>
+    <button mat-flat-button color="primary" class="myButton" *ngIf="isLoggedIn && isAdmin" (click)="addMovieDialog()">Add Movies</button>
+    <a href="/login"><button mat-flat-button color="primary" class="myButton" *ngIf="!isLoggedIn">Login</button></a>
+    <button mat-flat-button color="primary" class="myButton" *ngIf="!isLoggedIn" (click)="openResetPasswordComponent()">Reset Password</button>
+
+    
+    <button mat-icon-button class="example-icon favorite-icon logOut" aria-label="Example icon-button with heart icon" (click)="logOut()">
+      <mat-icon>power_settings_new</mat-icon>
+    </button>
+
+</mat-toolbar>

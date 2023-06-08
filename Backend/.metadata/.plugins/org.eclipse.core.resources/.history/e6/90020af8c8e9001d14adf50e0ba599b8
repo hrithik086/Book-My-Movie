@@ -1,0 +1,18 @@
+package com.movie.management.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+
+@Entity
+public class Ticket {
+	@Id
+	private int ticketId;
+	
+	private String movieName;
+	private String theatreName;
+	private int noOfSeats;
+	
+	@ManyToOne
+	private Movie movie;
+}

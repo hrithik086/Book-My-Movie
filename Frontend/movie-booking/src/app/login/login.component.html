@@ -1,0 +1,21 @@
+<mat-card class="loginCard">
+    <mat-card-content class="loginContent">
+        <h2 style="font-family: Arial, Helvetica, sans-serif; font-size: large; font-weight: bold;">Log In</h2>
+        <!-- <form #loginForm="ngForm" (ngSubmit)="login(loginForm)"> -->
+            <form #loginForm="ngForm">
+            <mat-form-field>
+                <mat-label>username</mat-label>
+                <input type="text" name="username" matInput ngModel >
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>password</mat-label>
+                <input type="password" name="password" matInput ngModel>
+            </mat-form-field>
+            <p>
+                <button mat-raised-button color="primary" (click)="login(loginForm)">Log In</button>
+                <button mat-raised-button (click)="openRegisterUserDialog()" color="primary" style="margin-left: 5px;">Register User</button>
+            </p>
+            
+        </form>
+    </mat-card-content>
+</mat-card>

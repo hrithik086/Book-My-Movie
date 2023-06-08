@@ -1,0 +1,61 @@
+package com.movie.management.service;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
+
+import java.util.Optional;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.movie.management.model.Movie;
+import com.movie.management.model.Ticket;
+import com.movie.management.repo.MovieRepository;
+import com.movie.management.repo.TicketRepository;
+
+@SpringBootTest
+public class TicketServiceImplTest {
+	
+	@Autowired
+	private TicketServices ticketService;
+	
+	@MockBean
+	private MovieRepository movieRepository;
+	@MockBean
+	private TicketRepository ticketRepository;
+	
+	private Ticket ticket;
+	
+	@BeforeEach
+	public void setup() {
+		ticket=new Ticket();
+		ticket.setTicketId(0);
+		ticket.setMovieName("movie name");
+		ticket.setTheatreName("theatre name");
+		ticket.setNoOfSeats(2);
+		ticket.setMovie(new Movie());
+		
+		when(ticketRepository.findById(0)).thenReturn(Optional.empty());
+		when(ticketRepository.save(ticket)).thenReturn(ticket);
+		when(movieRepository.findById(0)).thenReturn(Optional.of(new Movie()));
+		when(ticketRepository.findById(0)).thenReturn(Optional.of(ticket));
+		when(ticketRepository.deleteById(0));
+	}
+	
+	@Test
+	public void bookTicketTest() {
+		ticket=new Ticket();
+		boolean returnedValue=ticketService.bookTickets(0, "movie Name", "theatre name", 2);
+		assertEquals(true, returnedValue);
+	}
+
+	@Test
+	public void cancelTicketTest(int ticketId) {
+		
+	}
+	
+	
+}

@@ -1,0 +1,24 @@
+package com.movie.management.service;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.movie.management.repo.MovieRepository;
+
+@SpringBootTest
+public class MovieServiceImplTest {
+	
+	@Autowired
+	private MovieServices movieServices;
+	
+	@MockBean
+	private MovieRepository movieRepo;
+	
+	@BeforeEach
+	public void setup() {
+		
+	}
+	
+}

@@ -1,0 +1,55 @@
+package com.movie.management.service;
+
+import java.util.Random;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.movie.management.model.Movie;
+import com.movie.management.model.Ticket;
+import com.movie.management.repo.MovieRepository;
+import com.movie.management.repo.TicketRepository;
+
+@Service
+public class TicketServicesImpl implements TicketServices {
+	
+	@Autowired
+	TicketRepository ticketRepository;
+	
+	@Autowired
+	MovieRepository movieRepository;
+
+	@Override
+	public boolean bookTickets(int movieId, String movieName, String theatreName, int noOfSeats) {
+		Movie myMovie=movieRepository.findById(movieId).get();
+		
+		Ticket ticket=new Ticket();
+		ticket.setMovie(myMovie);
+		ticket.setMovieName(movieName);
+		ticket.setNoOfSeats(noOfSeats);
+		ticket.setTheatreName(theatreName);
+		Random r=new Random();
+		int ticketId;
+		
+		while(true) {
+			ticketId=r.nextInt(100000, 1000000);
+			if(ticketRepository.findById(ticketId).isEmpty()) {
+				break;
+			}
+			continue;
+		}
+		ticket.setTicketId(ticketId);
+//		Movie myMovie=movieRepository.findById(movieId).get();
+		myMovie.getTickets().add(ticket);
+//		ticket.setMovie(myMovie);
+//		
+		ticketRepository.save(ticket);
+//		movieRepository.save(myMovie);
+		
+		return true;
+	}
+	
+	
+	
+}
+;

@@ -1,0 +1,5 @@
+package com.movie.management.service;
+
+public interface TicketServices {
+	boolean bookTickets(int movieId, String movieName, String theatreName, int noOfSeats);
+}

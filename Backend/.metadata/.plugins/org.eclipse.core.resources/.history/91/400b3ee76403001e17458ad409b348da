@@ -1,0 +1,19 @@
+#server.port=8080
+server.port=9000
+
+#spring.datasource.url=jdbc:mysql://localhost:3306/fse1?createDatabaseIfNotExist=true
+spring.datasource.url=jdbc:mysql://hrithikdb.c918bifp8fik.us-west-2.rds.amazonaws.com/fse1?createDatabaseIfNotExist=true
+
+spring.datasource.username=root
+#spring.datasource.password=Mysql@086
+#spring.datasource.password=Mysqlhrithik@086
+spring.datasource.password=password123
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+
+#spring.kafka.producer.bootstrap-servers: localhost:9092
+#spring.kafka.producer.key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#spring.kafka.producer.value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#
+#management.endpoints.web.exposure.include=*
+#management.endpoints.web.health.show-details=always
