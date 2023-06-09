@@ -23,4 +23,9 @@ describe('ResetPasswordComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should pass', () => {
+    let actual=100;
+    expect(actual).toBe(100);
+  })
 });

@@ -2966,3 +2966,4 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.springfra
 2023-06-08 12:48:39,257 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
 2023-06-08 12:48:39,288 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
 2023-06-08 12:48:39,296 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Personal Files\FSE1 (5-12-2023)\FSE1\Backend\MovieService\src\test\resources
+2023-06-08 19:42:37,806 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
