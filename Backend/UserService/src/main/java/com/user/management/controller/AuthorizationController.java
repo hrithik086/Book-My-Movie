@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.user.management.exceptions.UserCreationException;
 import com.user.management.model.ResetUser;
-//import com.user.management.kafka.KafkaProducer;
+import com.user.management.kafka.KafkaProducer;
 import com.user.management.model.User;
 import com.user.management.service.JwtService;
 import com.user.management.service.UserService;
@@ -42,8 +42,8 @@ public class AuthorizationController {
 	@Autowired
 	UserService userService;
 	
-//	@Autowired
-//	private KafkaProducer kafkaProducer;
+	@Autowired
+	private KafkaProducer kafkaProducer;
 	
 	@Autowired
 	private AuthenticationManager authenticationManager;
@@ -125,11 +125,11 @@ public class AuthorizationController {
 		
 	}
 	
-//	@GetMapping("sendMessage/{message}")
-//	public String sendMessage(@PathVariable String message) {
-//		kafkaProducer.sendMessage(message);
-//		return message;
-//	}
+	@GetMapping("sendMessage/{message}")
+	public String sendMessage(@PathVariable String message) {
+		kafkaProducer.sendMessage(message);
+		return message;
+	}
 	
 	@PutMapping("/resetPassword")
 	public ResponseEntity<?> resetPassword(@RequestBody ResetUser resetUser){
