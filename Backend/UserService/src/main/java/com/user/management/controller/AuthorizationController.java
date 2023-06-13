@@ -108,6 +108,8 @@ public class AuthorizationController {
 		if(authentication.isAuthenticated()) {
 			LOGGER.info("user authenticated");
 			
+			sendMessage("user is authenticated");
+			
 			String role=userService.getUserRole(username, password);
 			
 			String token=jwtService.generateToken(username,role);
