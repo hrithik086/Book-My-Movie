@@ -3023,3 +3023,10 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.springfra
 2023-06-13 09:49:57,975 [Worker-29: Launching UserServiceImplTest] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.2/junit-platform-launcher-1.9.2.jar
 2023-06-13 13:40:32,179 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2023-06-13 14:09:36,083 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-06-13 20:02:32,433 [Worker-8: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-06-13 20:03:03,306 [Worker-4: Launching UserServiceApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-06-13 20:03:03,356 [Worker-4: Launching UserServiceApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-06-13 20:03:03,377 [Worker-4: Launching UserServiceApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Personal Files\FSE1 (5-12-2023)\FSE1\Backend\UserService\src\test\resources
+2023-06-13 20:03:10,842 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-06-13 20:03:10,900 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-06-13 20:03:10,914 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Personal Files\FSE1 (5-12-2023)\FSE1\Backend\MovieService\src\test\resources

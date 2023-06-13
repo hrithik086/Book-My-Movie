@@ -31,7 +31,7 @@ export class TicketComponent implements OnInit {
   }
 
   bookMovies(bookMovieForm:NgForm){
-    if(bookMovieForm.value.numberOfTickets > this.ticketsAvailable){
+    if(bookMovieForm.value.numberOfTickets > this.ticketsAvailable || bookMovieForm.value.numberOfTickets <=0){
       alert("booking of seats more than available seats is not allowed");
       return;
     }
