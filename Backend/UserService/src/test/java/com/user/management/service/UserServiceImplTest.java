@@ -45,7 +45,8 @@ public class UserServiceImplTest {
 		when(userRepo.findById(1)).thenReturn(Optional.of(myUser));
 		when(userRepo.findById(2)).thenReturn(Optional.empty());
 		when(userRepo.save(myUser)).thenReturn(myUser);
-		when(userRepo.findByUsernameAndPassword("username", "password")).thenReturn(userList);
+//		when(userRepo.findByUsernameAndPassword("username", "password")).thenReturn(userList);
+		when(userRepo.searchUsingUsernameAndPassword("username", "password")).thenReturn(userList);
 		when(userRepo.findByUsername("username")).thenReturn(userList);
 	}
 	

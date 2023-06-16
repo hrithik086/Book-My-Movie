@@ -37,7 +37,9 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public boolean login(String username, String password) {
-		List<User> userLists=userRepo.findByUsernameAndPassword(username, password);
+//		List<User> userLists=userRepo.findByUsernameAndPassword(username, password);
+		List<User> userLists=userRepo.searchUsingUsernameAndPassword(username, password);
+
 		if(userLists.size()!=0) {
 			return true;
 		}
@@ -46,7 +48,8 @@ public class UserServiceImpl implements UserService{
 	
 	@Override
 	public String getUserRole(String username, String password) {
-		List<User> userLists=userRepo.findByUsernameAndPassword(username, password);
+//		List<User> userLists=userRepo.findByUsernameAndPassword(username, password);
+		List<User> userLists=userRepo.searchUsingUsernameAndPassword(username, password);
 		return userLists.get(0).getRole();
 	}
 
