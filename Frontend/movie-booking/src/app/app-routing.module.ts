@@ -5,12 +5,14 @@ import { AllMoviesComponent } from './all-movies/all-movies.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { AuthGuard } from './auth/auth.guard';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {path: "", redirectTo: "login", pathMatch: "full"},
+  {path: "", redirectTo: "home", pathMatch: "full"},
   {path: "login", component:LoginComponent},
   {path: "allMovies", canActivate:[AuthGuard], component: AllMoviesComponent},
-  {path: "resetPassword", component: ResetPasswordComponent}
+  {path: "resetPassword", component: ResetPasswordComponent},
+  {path: "home", component: HomeComponent}
   // {path: "addMovie", canActivate:[AuthGuard],component: AddMovieComponent}
 ];
 

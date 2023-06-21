@@ -24,6 +24,7 @@ import { UpdateMovieComponent } from './update-movie/update-movie.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { BookedTicketComponent } from './booked-ticket/booked-ticket.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     UpdateMovieComponent,
     TicketComponent,
     BookedTicketComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    HomeComponent
   ],
   entryComponents: [RegisterUserComponent, AddMovieComponent, UpdateMovieComponent, TicketComponent, BookedTicketComponent],
   imports: [

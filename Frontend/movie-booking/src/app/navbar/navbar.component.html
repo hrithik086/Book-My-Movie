@@ -13,7 +13,7 @@
     <button mat-flat-button color="primary" class="myButton" *ngIf="!isLoggedIn" (click)="openResetPasswordComponent()">Reset Password</button>
 
     
-    <button mat-icon-button class="example-icon favorite-icon logOut" aria-label="Example icon-button with heart icon" (click)="logOut()">
+    <button mat-icon-button class="example-icon favorite-icon logOut" *ngIf="isLoggedIn" aria-label="Example icon-button with heart icon" (click)="logOut()">
       <mat-icon>power_settings_new</mat-icon>
     </button>
 
