@@ -25,6 +25,7 @@ import { TicketComponent } from './ticket/ticket.component';
 import { BookedTicketComponent } from './booked-ticket/booked-ticket.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { HomeComponent } from './home/home.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { HomeComponent } from './home/home.component';
     MatInputModule, MatDividerModule,MatDialogModule,MatTableModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
