@@ -50,6 +50,10 @@ export class NavbarComponent implements OnInit {
     this.router.navigateByUrl("resetPassword")
   }
 
+  openHome(){
+    this.router.navigate(['/home']);
+  }
+
 
 
 }
