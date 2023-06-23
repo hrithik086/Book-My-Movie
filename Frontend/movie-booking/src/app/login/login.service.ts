@@ -15,7 +15,16 @@ export class LoginService {
   loginStatus= new BehaviorSubject<boolean>(false);
   role=new BehaviorSubject<string>("user");
 
-  constructor(private http:HttpClient) {}
+  constructor(private http:HttpClient) {
+    let tempRole=localStorage.getItem('role');
+    let token=localStorage.getItem('token')
+    if(localStorage.getItem('login')==='true' && tempRole && token){
+      this.loginStatus.next(true);
+      if(tempRole){
+        this.role.next(tempRole)
+      }
+    }
+  }
 
   // private login="http://localhost:8081/authentication/login";
   // private register="http://localhost:8081/authentication/registerUser";

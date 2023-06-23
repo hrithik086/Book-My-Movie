@@ -18,7 +18,6 @@ export class AllMoviesComponent implements OnInit {
     this.dataSource=[];
     this.mainDataSource=[];
     this.movieService.getMovies().subscribe(data => {
-      console.log(data);
       this.dataSource=data;
       this.mainDataSource=data;
     })
@@ -31,6 +30,7 @@ export class AllMoviesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
 
   isAdmin:boolean=false;
 
@@ -78,6 +78,13 @@ export class AllMoviesComponent implements OnInit {
 
   clearSearch(){
     this.dataSource=this.mainDataSource;
+  }
+
+  reloadData(){
+    this.movieService.getMovies().subscribe(data => {
+      this.dataSource=data;
+      this.mainDataSource=data;
+    });
   }
 
 }
