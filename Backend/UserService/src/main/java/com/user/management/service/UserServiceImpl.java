@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.user.management.exceptions.UserCreationException;
@@ -15,6 +16,9 @@ public class UserServiceImpl implements UserService{
 	
 	@Autowired
 	UserRepo userRepo;
+	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
 	@Override
 	public List<User> getAllUsers() {
@@ -27,6 +31,8 @@ public class UserServiceImpl implements UserService{
 	public boolean createUser(User user) throws UserCreationException {
 		Optional<User> myUser=userRepo.findById(user.getId());
 		if(myUser.isEmpty()) {
+			String hashedPassword=passwordEncoder.encode(user.getPassword());
+			user.setPassword(hashedPassword);
 			userRepo.save(user);
 			return true;
 		}
@@ -49,7 +55,8 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public String getUserRole(String username, String password) {
 //		List<User> userLists=userRepo.findByUsernameAndPassword(username, password);
-		List<User> userLists=userRepo.searchUsingUsernameAndPassword(username, password);
+//		List<User> userLists=userRepo.searchUsingUsernameAndPassword(username, password);
+		List<User> userLists=userRepo.searchByUsername(username);
 		return userLists.get(0).getRole();
 	}
 
