@@ -3,5 +3,10 @@
 }
 
 .logOut{
+    /* margin-left: auto; */
     margin-left: auto;
+}
+
+.positionRight{
+    margin-left: 60%;
 }

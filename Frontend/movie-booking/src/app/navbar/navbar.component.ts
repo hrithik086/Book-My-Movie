@@ -14,6 +14,9 @@ export class NavbarComponent implements OnInit {
   isLoggedIn:boolean=false;
   isAdmin:boolean=false;
 
+  locations=["berhampur","ganjam","odisha"]
+  locationTitle="location";
+
   constructor(private router:Router, private matDialog: MatDialog, private loginService:LoginService) {
     this.loginService.loginStatus.subscribe(data => {
       this.isLoggedIn=data;
@@ -55,6 +58,10 @@ export class NavbarComponent implements OnInit {
 
   openHome(){
     this.router.navigate(['/home']);
+  }
+
+  changeLocationTitle(title: string){
+    this.locationTitle=title;
   }
 
 

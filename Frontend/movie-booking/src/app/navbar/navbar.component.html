@@ -16,9 +16,24 @@
     <a href="/login"><button mat-flat-button color="primary" class="myButton" *ngIf="!isLoggedIn">Login</button></a>
     <button mat-flat-button color="primary" class="myButton" *ngIf="!isLoggedIn" (click)="openResetPasswordComponent()">Reset Password</button>
 
+
+    <div class="row positionRight">
+      <div class="col">
+        <div ngbDropdown class="d-inline-block">
+          <button type="button" class="btn btn-secondary" id="dropdownBasic1" ngbDropdownToggle>
+            {{locationTitle | titlecase}}
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem *ngFor="let location of locations" (click)="changeLocationTitle(location)">{{location | titlecase}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
     
     <button mat-icon-button class="example-icon favorite-icon logOut" *ngIf="isLoggedIn" aria-label="Example icon-button with heart icon" (click)="logOut()">
       <mat-icon>power_settings_new</mat-icon>
     </button>
+
+  
 
 </mat-toolbar>
