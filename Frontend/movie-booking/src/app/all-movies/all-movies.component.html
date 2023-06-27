@@ -1,11 +1,14 @@
-<form #searchForm="ngForm">
-  <mat-form-field style="margin-left: auto; margin-right: auto;">
-      <mat-label>Search</mat-label>
-      <input type="text" name="search" matInput ngModel >
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="searchMovie(searchForm)">Search</button>
-  <button mat-raised-button color="primary" (click)="clearSearch()" style="margin-left: 5px;">Clear Search</button>
-</form>
+<div class="searchBar">
+  <form #searchForm="ngForm">
+    <!-- <mat-form-field style="margin-left: auto; margin-right: auto;">
+        <mat-label>Search</mat-label>
+        <input type="text" name="search" matInput ngModel style="background-color: white;">
+    </mat-form-field> -->
+    <input type="text" class="inputStyling" name="search" placeholder="Search Movies" matInput ngModel>
+    <!-- <button mat-raised-button color="primary" (click)="searchMovie(searchForm)">Search</button> -->
+    <button class="btn btn-secondary bg-transparent buttonStyling" (click)="clearSearch()" style="margin-left: 5px;"><mat-icon>search</mat-icon></button>
+  </form>
+</div>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 

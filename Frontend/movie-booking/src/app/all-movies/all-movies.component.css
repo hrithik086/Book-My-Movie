@@ -5,3 +5,31 @@ table {
 .buttonSpacing {
   margin-left: 10px;
 }
+
+.searchBar{
+  background-color: rgb(71, 69, 69);
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+  border-radius: 30px;
+}
+
+.searchBar > form {
+  padding: 5px;
+}
+
+.inputStyling{
+  width: 90%; 
+  /* height: 80%; */
+  padding: 3px;
+  padding-left: 10px;
+  border-radius: 20px; 
+  margin-left: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+.buttonStyling{
+  border-radius: 100px;
+  width: 50px;
+}
